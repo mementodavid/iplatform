@@ -1,0 +1,257 @@
+@font-face {
+    font-family: 'gibsonregular';
+    src: url('font/gibson-webfont.eot');
+    src: url('font/gibson-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/gibson-webfont.woff') format('woff'),
+         url('font/gibson-webfont.ttf') format('truetype'),
+         url('font/gibson-webfont.svg#gibsonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gibson_lightbold';
+    src: url('font/gibson-semibold-webfont.eot');
+    src: url('font/gibson-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/gibson-semibold-webfont.woff') format('woff'),
+         url('font/gibson-semibold-webfont.ttf') format('truetype'),
+         url('font/gibson-semibold-webfont.svg#gibson_lightbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gibson_lightitalic';
+    src: url('font/gibson-light-italic-webfont.eot');
+    src: url('font/gibson-light-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/gibson-light-italic-webfont.woff') format('woff'),
+         url('font/gibson-light-italic-webfont.ttf') format('truetype'),
+         url('font/gibson-light-italic-webfont.svg#gibson_lightitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body
+{
+	background-color: #FFFFFF;
+	color: #000000;
+	font-size: 18pt;
+	font-family:"gibson_lightbold",sans-serif;
+    font-weight:100;
+    width: 100%;
+}
+table
+{
+	/*border: outset 4pt;
+	border-color: #000000;
+	border-collapse:separate;
+	border-spacing:5px;
+	border-style: solid;*/
+	width:480px;
+}
+#header
+{
+	position:fixed;
+	top:0px;
+	background-color: #FFFFFF;
+	width:480px;
+}
+}
+tr
+{
+	width: 100%;
+}
+td
+{
+	border: outset 2pt;
+	border-color: #000000;
+	border-style: solid;
+	background-color: #FFFFFF;
+	color: #000000;
+	height:34px;
+	width: 120px;
+}
+.headline
+{
+	height: 100px;
+	font-weight:600;
+}
+.tldr
+{
+	visibility: collapse;
+    display: none;
+}
+.message
+{
+	visibility: collapse;
+    display: none;
+}
+.messageDate
+{
+	float: right;
+}
+.messageImage
+{
+	float: left;
+}
+.messageSenderSubject
+{
+	float: left;
+}
+.button
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contentChoice
+{
+    display:block;
+    text-align: center; 
+    margin: 0 auto;
+    font-size: 22pt;
+}
+.memberCompany
+{
+	float: right;
+	font-size: 16pt;
+}
+.memberName
+{
+	float: left;
+	font-size: 16pt;
+}
+.threadMessage
+{
+	float: right;
+	font-size: 16pt;
+}
+.messageInput
+{
+	width: 450px;
+	height: 40px;
+}
+.inputButton
+{
+	float: right;
+	color: #FFFFFF;
+	border-color: #000000;
+	background-color: #B72727;
+	border-style: solid;
+	border-radius: 8px;
+}
+.contentImage
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contentText
+{
+    font-size: 16pt;
+    font-family:"gibsonregular",sans-serif;
+}
+.highlighted
+{
+    background-color: #B72727;
+    color: #FFFFFF;
+}
+.forumThread
+{
+    font-family:"gibsonregular",sans-serif;
+    float: right;
+}
+.forumTag
+{
+    float: right;
+}
+.annotation
+{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width:400px;
+    height: auto; /* Full height */
+    background-color: #B72727;
+    color: #FFFFFF;
+    border: 1px solid #888;
+    border-radius: 8px;
+}
+.annotationClose
+{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+/* Remove margins and padding from the list, and add a black background color */
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+/* Float the list items side by side */
+ul.topnav li 
+{
+	float: left;
+}
+/* Style the links inside the list items */
+ul.topnav li 
+{
+    display: inline-block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 40px;
+}
+/* Change background color of links on hover */
+ul.topnav li:hover 
+{
+	background-color: #555;
+}
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon 
+{
+    display: none;
+}
+
+/*Hide all list items, except for the first one (icon). Show the list item that contains the link to open and close the topnav (li.icon) */
+ul.topnav li:not(:first-child) 
+{
+	display: none;
+}
+ul.topnav li.icon 
+{
+    float: right;
+    display: inline-block;
+    font-size: 60px
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the menu icon. This class makes the topnav look good on small screens */  
+ul.topnav.responsive 
+{
+	position: absolute;
+    background-color: #888888;
+}
+ul.topnav.responsive li.icon 
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+ul.topnav.responsive li 
+{
+    float: left;
+    display: block;
+}
+ul.topnav.responsive li 
+{
+    display: block;
+    text-align: left;
+}

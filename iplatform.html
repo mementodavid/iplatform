@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>IPlatform</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="iplatform.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="digidaypulse.js"></script>
+	</head>
+	<body>
+		<div id="queryfield">
+			<table>
+				<tr id="content0">
+					<td id="headline0" class="headline" colspan="4" onClick="expandContent(this.id)">
+                        <form action="TK.php" method="post">
+							Perspective:<select id="category" name="category">
+								<option value=""></option>
+								<option value="media">media</option>
+								<option value="marketing">marketing</option>
+							</select><br/>
+                            Topic 1:<select id="topic1" name="topic1">
+                                <option value=""></option>
+								<option value="1100">direct response</option>
+								<option value="1200">display</option>
+								<option value="1300">search</option>
+								<option value="1400">native</option>
+								<option value="1500">social</option>
+								<option value="1111">retail</option>
+								<option value="1112">fashion/luxury</option>
+								<option value="1510">influencer</option>
+								<option value="1520">messaging</option>
+								<option value="2000">content</option>
+								<option value="2100">video</option>
+								<option value="2200">audio</option>
+								<option value="3100">virtual reality</option>
+								<option value="3200">augmented reality</option>
+								<option value="3410">artificial intelligence</option>
+								<option value="3420">programmatic</option>
+								<option value="3421">header bidding</option>
+								<option value="3422">brand safety</option>
+								<option value="4310">viewability</option>
+                            </select>
+                            Topic 2:<select id="topic2" name="topic2">
+                                <option value=""></option>
+                                <option value="1000">distribution</option>
+								<option value="1600">targeting</option>
+								<option value="1110">commerce</option>
+								<option value="2300">mobile</option>
+								<option value="3000">innovation</option>
+								<option value="3300">user experience</option>
+								<option value="3400">automation</option>
+								<option value="3420">programmatic</option>
+								<option value="4000">metrics</option>
+								<option value="4100">revenue</option>
+								<option value="4200">budget</option>
+								<option value="4300">analytics</option>
+								<option value="5000">operations</option>
+                            </select><br/>
+							Keyword:<input type="text" id="ikeyword" name="ikeyword"/><br/>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </td>
+				</tr>
+                <tr>
+                    <div id="results">
+                    </div>
+                </tr>
+			</table>
+		</div>
+	</body>
+</html>
