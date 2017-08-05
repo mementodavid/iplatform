@@ -14,9 +14,13 @@
 			$er = mysql_select_db("iplatform");
 			if (!$er)
 				exit("Error - Could not select the iPlatform system database.");
+
+
 			$ikeyword = $_POST["ikeyword"];
 			$category = $_POST["category"];
 			$topic1 = $_POST["topic1"];
+
+
 			/*Given the established information hierarchy, this broadens the search to prevent more null sets from being returned. */
 			switch($topic1)
 			{
@@ -102,25 +106,37 @@
 				default:
 					$topic2 = "'" . $topic2 . "'";
 			}
-			/*Clear potentially cached queries.*/
+			/* Clear potentially cached queries. */
 			unset($query);
+
+
 			/*Start of a dynamic query builder. If the media/marketing perspective is present, include it in the "WHERE" parameters. */
-			if ($category) 
+			if ($category)
 			{
 				$sql[] = " category = '".$category."' ";
 			}
+
 			/*Are both topics included? If so, load them both into the query and check if at least two tags from the set of terms and associated terms are present (a successful cross reference).*/
-			if (($topic1 != "''") && ($topic2 != "''")) 
+			if (($topic1 != "''") && ($topic2 != "''"))
 			{
 				$sql[] = " tag_index.tag_id IN (".$topic1.", ".$topic2.") GROUP BY insights.id HAVING COUNT(tag_index.tag_id) >= 2 ";
 			}
+
 			/*But if only one of the queries are present (cases of both being present will be caught above) check matches for that one. */
 			elseif (($topic1 != "''") || ($topic2 != "''"))
 			{
 				 $sql[] = " (tag_index.tag_id IN (".$topic1.") OR tag_index.tag_id IN (".$topic2."))";
 			}
+
 			/*The base query. The keyword is preloaded, since anything "like" a blank keyword matches any entry anyway. For now only pull the insight's text.*/
-			$query = "SELECT insights.text FROM insights INNER JOIN tag_index ON insights.id = tag_index.insight_id WHERE insights.text LIKE '%".$ikeyword."%' ";
+			$query = "SELECT insights.text
+								FROM insights
+								INNER JOIN tag_index
+								ON insights.id = tag_index.insight_id
+								WHERE insights.text
+								LIKE '%".$ikeyword."%'";
+
+
 			/*Check if the dynamic query builder yielded any result, if any non-keyword fields were filled out. If not, proceed with the base query. */
 			if (!empty($sql)) {
 
@@ -143,7 +159,7 @@
 					/*Basic result display.*/
 					for ( $counter = 0; $row = mysql_fetch_row($result); $counter++ )
 							{
-								
+
 								print( "<tr><td>" );
 								foreach ( $row as $key => $value )
 									print( "$value" );
