@@ -1,3 +1,5 @@
+<?php require_once( 'inc_connect.php' );?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -5,16 +7,6 @@
 	</head>
 	<body>
 		<?php
-			/*Connect to the server, in this case home.*/
-			$db = mysql_connect("localhost","******","********<3");
-			/*In case of connection error*/
-			if (!$db)
-				exit("Error - Could not connect to MySQL");
-			/*Select iplatform database.*/
-			$er = mysql_select_db("iplatform");
-			if (!$er)
-				exit("Error - Could not select the iPlatform system database.");
-
 
 			$ikeyword = $_POST["ikeyword"];
 			$category = $_POST["category"];
